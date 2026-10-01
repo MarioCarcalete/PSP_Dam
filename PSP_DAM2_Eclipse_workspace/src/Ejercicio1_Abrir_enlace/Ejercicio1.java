@@ -1,0 +1,28 @@
+package Ejercicio1_Abrir_enlace;
+
+import java.io.IOException;
+import java.util.Scanner;
+
+public class Ejercicio1 {
+
+    static int retorno = -2;
+
+    // Usuario pide enlace y abrirlo
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        Scanner teclado = new Scanner(System.in);
+
+        System.out.println("Hola, introduce un enlace para abrir:");
+        String respuesta = teclado.nextLine();
+
+        ProcessBuilder pb = new ProcessBuilder("xdg-open", respuesta); // sirve para decir que el buscador predeterminado 
+
+        Process p = pb.start();
+        retorno = p.waitFor();
+
+        System.out.println("Llegamos aquí cuando la ejecución del proceso finaliza");
+        System.out.println("La ejecución devuelve: " + retorno);
+
+        teclado.close();
+    }
+}

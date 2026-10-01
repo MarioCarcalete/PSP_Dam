@@ -1,0 +1,39 @@
+package Ejercicio4_Ejercicio1;
+
+import java.io.*;
+
+public class LlamarLeerNombre {
+
+    public static void main(String[] args) throws IOException, InterruptedException {
+
+        ProcessBuilder pb = new ProcessBuilder("java", "LeerNombre");
+        pb.directory(new File("/home/alumno/Escritorio/PSP DE DAM/PSP_DAM2_Eclipse_workspace/src/Ejercicio4_Ejercicio1"));
+        pb.redirectErrorStream(true);
+
+        Process p = pb.start();
+
+        // Leer la salida del hijo (vocales)
+        BufferedReader lector = new BufferedReader(new InputStreamReader(p.getInputStream()));
+        String linea;
+        while ((linea = lector.readLine()) != null) {
+            System.out.println("[Hijo] " + linea);
+        }
+
+        // Escribir en el stdin del hijo (el nombre)
+        PrintWriter escritura = new PrintWriter(p.getOutputStream(), true);
+        System.out.print("Introduce un nombre: ");
+        Scanner sc = new Scanner(System.in);
+        String nombre = sc.nextLine();
+        escritura.println(nombre);
+        escritura.close();
+
+        int retorno = p.waitFor();
+
+        System.out.println("Código de salida: " + retorno);
+        if (retorno == 0) {
+            System.out.println("OK");
+        } else {
+            System.out.println("Error: nombre demasiado corto");
+        }
+    }
+}   
