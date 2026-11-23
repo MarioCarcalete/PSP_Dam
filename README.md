@@ -33,9 +33,22 @@ Ejercicios y prácticas de la asignatura **Programación de Servicios y Procesos
 
 ## ▶️ Cómo ejecutarlo
 
-1. Clona el repo: `git clone https://github.com/MarioCarcalete/PSP_Dam.git`
-2. En Eclipse: **File → Import → Existing Projects into Workspace** y selecciona la carpeta del proyecto.
-3. Abre la clase con `main` → botón derecho → **Run As → Java Application**.
+Necesitas un JDK 17 o superior. Cada carpeta es un proyecto Java independiente con su código en `src/`.
+
+**Desde la terminal** (ejemplo con los ejercicios de hilos):
+
+```bash
+git clone https://github.com/MarioCarcalete/PSP_Dam.git
+cd PSP_Dam/ClaseViernes16
+javac -d bin $(find src -name "*.java")
+java -cp bin Tic_y_Tact.main
+```
+
+Cambia `Tic_y_Tact.main` por `paquete.Clase` del ejercicio que quieras probar.
+
+**Desde Eclipse**: *File → New → Java Project*, desmarca *Use default location*, elige la carpeta del proyecto (por ejemplo `ClaseViernes16`) y pulsa *Finish*. Eclipse detecta solo la carpeta `src`. Después, botón derecho sobre la clase con `main` → *Run As → Java Application*.
+
+> Los ejercicios de multiproceso lanzan otros programas (`gedit`, `xdg-open`, la clase hija...), así que están pensados para Linux y para tener los dos proyectos, padre e hijo, en el mismo workspace.
 
 ---
 
