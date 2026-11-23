@@ -9,6 +9,7 @@ Ejercicios y prácticas de la asignatura **Programación de Servicios y Procesos
 
 - **Multiproceso**: lanzar programas desde Java con `ProcessBuilder`, leer su salida y usar los códigos de salida (`System.exit`) para comunicar procesos padre e hijo.
 - **Hilos (threads)**: crear hilos con `Thread` y `Runnable`, `sleep`, `join`, `interrupt` y sincronización con `synchronized`.
+- **Concurrencia avanzada**: `Semaphore` para limitar el acceso a un recurso y `ExecutorService` para gestionar un pool de hilos.
 
 ## 🗂️ Estructura
 
@@ -18,6 +19,7 @@ Ejercicios y prácticas de la asignatura **Programación de Servicios y Procesos
 | [`Proyectos_padres`](Proyectos_padres) / [`Proyectos_hijos`](Proyectos_hijos) | Multiproceso: el programa padre lanza al hijo y actúa según su código de salida |
 | [`Ejercicios_Pasos`](Ejercicios_Pasos) | Enunciados explicados paso a paso |
 | [`ClaseViernes16`](ClaseViernes16) | Ejercicios de hilos (ver abajo) |
+| [`ClaseViernes13N`](ClaseViernes13N) | Semáforos (`Semaphore`) y pool de hilos con `ExecutorService`; práctica de la barca en curso |
 
 ### Ejercicios de hilos (`ClaseViernes16`)
 
